@@ -1,0 +1,19 @@
+{
+    "name": "danieltm/mysql_query",
+    "description": "Facilitador de query sql",
+    "type": "libraly",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "MysqlQuery\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Daniel Teixeira Melo",
+            "email": "108521502+DanielTM999@users.noreply.github.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
