@@ -1,7 +1,7 @@
 <?Php
     namespace MysqlQuery;
 
-use mysqli;
+    use mysqli;
 
     require __DIR__.'./abstracao/abs.php';
 
@@ -92,14 +92,26 @@ use mysqli;
             $pste_itens = "";
             $pste_values = "";
             foreach(array_combine($itens, $values) as $id => $param){
+                if(is_bool($param)){
+                    if($param){
+                        $param = "true";
+                    }else{
+                        $param = "false";
+                    }
+                }
                 $pste_itens .= "$id,";
                 $param = mysqli_real_escape_string($this->conexao(), $param);
-                $pste_values .= "'$param',";
+                if(strtolower($param) == "false" || strtolower($param) == "true"){
+                    $pste_values .= "$param,";
+                }else{
+                    $pste_values .= "'$param',";
+                }
             }  
             
             $itens = substr($pste_itens, 0, strlen($pste_itens)-1);
             $insert = substr($pste_values, 0, strlen($pste_values)-1);
             $sql = "INSERT INTO $banco.$table($itens) VALUES ($insert)";
+            echo $sql;
             try {
                 $act = mysqli_query($this->conexao(), $sql);
 
@@ -117,9 +129,10 @@ use mysqli;
             $banco = $this->banco;
             $pste = "";
             foreach(array_combine($itens, $values) as $key => $key1){
-                $pste .= "$key='$key1' AND ";
+                $key1 = mysqli_real_escape_string($this->conexao(), $key1);
+                $pste .= "$key='$key1' OR ";
             }
-            $query = substr($pste, 0, strlen($pste)-5);
+            $query = substr($pste, 0, strlen($pste)-4);
 
             $sql = "SELECT * FROM $banco.$table WHERE $query";
 
@@ -127,11 +140,8 @@ use mysqli;
                 $act = mysqli_query($this->conexao(), $sql);
                 if($act){
                     $row = mysqli_num_rows($act);
-                    if($row == 0){
-                        return true;
-                    }else{
-                        return false;
-                    }
+                    
+                    return $row;
                 }else{
                     return false;
                 }
@@ -186,6 +196,7 @@ use mysqli;
 
             $pste = "";
             foreach(array_combine($collunas, $values) as $colluns => $valor){
+                $valor = mysqli_real_escape_string($this->conexao(), $valor);
                 $pste .= "$colluns='$valor' or ";
             }
             $pste = substr($pste, 0, strlen($pste) - 4);
@@ -225,6 +236,7 @@ use mysqli;
             $pste = "";
 
             foreach(array_combine($colunas, $values) as $coll => $valores){
+                $valores = mysqli_real_escape_string($this->conexao(), $valores);
                 $pste .= "$coll='$valores' OR ";
             }
 
@@ -249,6 +261,7 @@ use mysqli;
 
             $pste = "";
             foreach(array_combine($colunas, $valor) as $collun => $values){
+                $values = mysqli_real_escape_string($this->conexao(), $values);
                 $pste .= "$collun='$values',";
             }
             $pste = substr($pste, 0, strlen($pste) - 1);
