@@ -2,11 +2,14 @@
     namespace MysqlQuery;
 
     use mysqli;
+    use PdoMasterFi;
 
     require __DIR__.'./abstracao/abs.php';
+    require __DIR__.'./PdoMaster.php';
 
     //main CLass
     class Master extends abs{
+
         private $banco;
         private $host = "";
         private $user = "";
@@ -280,7 +283,34 @@
                 }
             } catch (\Throwable $th) {
                 return $th;
-            } 
+            }finally{
+                $com = $this->conexao();
+            }
+        }
+
+    }
+
+    class PdoMaster extends PdoMasterFi{
+        private $host;
+        private $pass;
+        private $pdodb;
+        private $typeDB;
+
+        function __construct($host, $pass, $typeDB){
+          $this->host = $host;
+          $this->pass = $pass;
+          $this->typeDB = $typeDB;   
+          parent::__construct($this->host, $this->pass,$this->typeDB);
+        }
+
+        public function connection_statusPDO(){
+            if(parent::conexao()){
+                echo 'sucesso';
+            }else if(parent::conexao() == null){
+                echo 'erro connerxão == '. parent::conexao();
+            }else{
+                echo 'fatal erro';
+            }
         }
     }
 ?>
