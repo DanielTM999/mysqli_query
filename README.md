@@ -21,10 +21,10 @@
    Essa função tem o intuito de criar um banco de dados no seu servidor de mysql e rotorna true ou false
  
  ## Como deletar banco de dados(MYSQLI)
-    ```shell
+   ```shell
       $database = "nome do banco de dados";
       $sql->drodDB($database);
-    ```
+   ```
     Essa função tem o intuito de Deletar um banco de dados no seu servidor de mysql e rotorna true ou false
     
  ## retorno de conexão(MYSQLI)
