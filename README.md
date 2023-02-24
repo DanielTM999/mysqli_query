@@ -19,7 +19,14 @@
      $sql->createDB($database);
    ```
    Essa função tem o intuito de criar um banco de dados no seu servidor de mysql e rotorna true ou false
-   
+ 
+ ## Como deletar banco de dados(MYSQLI)
+    ```shell
+      $database = "nome do banco de dados";
+      $sql->drodDB($database);
+    ```
+    Essa função tem o intuito de Deletar um banco de dados no seu servidor de mysql e rotorna true ou false
+    
  ## retorno de conexão(MYSQLI)
    ```shell
      $db = $sql->createDB($database);
@@ -43,6 +50,14 @@ logo depois  do "createDB()".
       $sql->createTable($nome_tabela, $colunas, $type); 
    ```
   Essa função tem o intuito de criar uma tabela, informando parâmetros como nome da tabela a ser criada,uma lista com os nomes das colunas e outra com os tipos de valores.
+  
+## Deletar tabela(MYSQLI)
+   ```shell
+      $sql->useDB($database)
+      $nome_tabela = "Table_name";
+      $sql->DropTable($nome_tabela); 
+   ```
+  Essa função tem o intuito de Deletar uma tabela, informando parâmetros como nome da tabela a ser deletada e rotorna true ou false
 
 ## Insenrindo dados nas tabelas(MYSQLI)
    ```shell
