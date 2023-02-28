@@ -33,6 +33,7 @@
    ```shell
      $db = $sql->conexao();
    ```
+ # EM DESENVOLVIMENTO...
   <li>Essa função tem o intuito de retornar a conexão para uso de querys personalizadas.
    
 ## Usar uma base de dados(MYSQLI)
