@@ -68,7 +68,18 @@
             
             try{
                 $pdo = $this->conexao();
+                $pste = $pdo->prepare($sql);
+                $auth = $pste->execute();
+
+                if($auth){
+                    $this->useDB($database);
+                    return true;
+                }else{
+                    return false;
+                }
+            } catch (PDOException $e) {
+                echo $e->getMessage();
             }
-                
+        }           
     }
 ?>
