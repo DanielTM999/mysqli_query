@@ -96,6 +96,6 @@ logo depois  do "createDB()".
       $tabela = "Table_name";
       $condição = ['ex: nome', 'senha']; // caso não informado na função ele fusba todos['*']
       $lista = GetUniqElements($tabela, ['colunas1', ''colunaN'], ['valorBuscado', 'valor2'], $condição)
-   ```
-   Essa função tem o intuito de pegar e retornar um array associativo com os elementos especificos selecionados da tabela, informando a tabela por quais colonas ele vai usar como buscador e os elementos que vão ser buscados podendo deixar em branco(com isso ele irá retornar todos os elementos), podendo ser mostrado com um foreach ou qualqer laço de repetição que o usuario deseja;
+    ```
+  Essa função tem o intuito de pegar e retornar um array associativo com os elementos especificos selecionados da tabela, informando a tabela por quais colonas ele vai usar como buscador e os elementos que vão ser buscados podendo deixar em branco(com isso ele irá retornar todos os elementos), podendo ser mostrado com um foreach ou qualqer laço de repetição que o usuario deseja;
   
