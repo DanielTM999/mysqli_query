@@ -110,9 +110,9 @@ logo depois  do "createDB()".
   <li>Essa função tem o intuito de Deletar um elemento especifico de uma tabela passando o nome da coluna que vai ser usada como elemento de condição com o valor da coluna e irá retornar uma resposta Booleana(true/false)
     
 ## alterar elemento de uma tabela(row)(MYSQL)
-    ```shell
+   ```shell
       $sql->useDB($database); // $database é o nome da base de dados criada
       $tabela = "Table_name";
       $sql->alterElement($table, ['coluna', 'ex: nome'], ['valor', ex:daniel], ['id', '1');
-    ```
+   ```
   <li>Essa função tem o intuito de Alterar um elemento especifico de uma tabela passando o nome da coluna que vai ser alterao com o novo valor da coluna e tambem a condiçao (ex:['id', '1'] == (id=1) em query) e irá retornar uma resposta Booleana(true/false).
