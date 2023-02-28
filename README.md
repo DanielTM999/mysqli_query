@@ -84,10 +84,9 @@ logo depois  do "createDB()".
       $sql->useDB($database) // $database é o nome da base de dados criada
       $tabela = "Table_name";
       $lista = $sql->GetAllElements($tabela);
-      $lista = mysqli_fetch_assoc($lista);
       foreach($lista as $key){
         echo $key[//'nome da sua coluna'];
       }
     ```
-  Essa função tem o intuito de pegar e retornar um array associativo, podendo ser mostrado com um foreach ou qualqer
+  Essa função tem o intuito de pegar e retornar um array associativo com todos os elementos da tabela informada, podendo ser mostrado com um foreach ou qualqer laço de repetição que o usuario deseja;
 
