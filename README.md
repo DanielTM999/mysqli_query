@@ -31,7 +31,7 @@
     
  ## retorno de conexão(MYSQLI)
    ```shell
-     $db = $sql->createDB($database);
+     $db = $sql->conexao();
    ```
   <li>Essa função tem o intuito de retornar a conexão para uso de querys personalizadas.
    
@@ -99,7 +99,7 @@ logo depois  do "createDB()".
      $condição = ['ex: nome', 'senha']; // caso não informado na função ele fusba todos['*']
      $lista = $sql->GetUniqElements($tabela, ['colunas1', ''colunaN'], ['valorBuscado', 'valor2'], $condição);
   ```
-  <li>Essa função tem o intuito de pegar e retornar um array associativo com os elementos especificos selecionados da tabela, informando a tabela por quais        colunas ele vai usar como buscador e os elementos que vão ser buscados podendo deixar em branco(com isso ele irá retornar todos os elementos), podendo ser  mostrado com um foreach ou qualqer laço de repetição que o usuario desejaa
+  <li>Essa função tem o intuito de pegar e retornar um array associativo com os elementos especificos selecionados da tabela, informando a tabela por quais        colunas ele vai usar como buscador e os elementos que vão ser buscados podendo deixar em branco(com isso ele irá retornar todos os elementos), podendo ser  mostrado com um foreach ou qualqer laço de repetição que o usuario desejar
 
 ## Deletar elemento De uma Tabela(MYSQLI)
   ```shell
@@ -123,7 +123,12 @@ logo depois  do "createDB()".
   ```shell
      require __DIR__.'./vendor/autoload.php';
      use MysqlQuery\Master;
-     $sql = new PdoMaster("host", "senha", "tipodebanco(mysql/postgresql)", "user");
+     $sqlPdo = new PdoMaster("host", "senha", "tipodebanco(mysql/postgresql)", "user");
  ```
-<li>importe o autoload do composer, logo apois isso use o classe de mysqlquery e instancie uma classe do PdoMaster passando seus dados do banco de dados
-    
+<li>importe o autoload do composer, logo apois isso use o classe de mysqlquery e instancie uma classe do PdoMaster passando seus dados do banco de dados.
+
+## retorno de conexão(PDO)
+ ```shell
+     $db = $sqlPdo->conexao();
+ ```
+<li>Essa função tem o intuito de retornar a conexão para uso de querys personalizadas.
