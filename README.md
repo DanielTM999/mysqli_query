@@ -120,10 +120,10 @@ logo depois  do "createDB()".
 # Com PDO
 
 ## como Usar(PDO)
-    ```shell
+  ```shell
      require __DIR__.'./vendor/autoload.php';
      use MysqlQuery\Master;
      $sql = new PdoMaster("host", "senha", "tipodebanco(mysql/postgresql)", "user");
-  ```
+ ```
 <li>importe o autoload do composer, logo apois isso use o classe de mysqlquery e instancie uma classe do PdoMaster passando seus dados do banco de dados
     
