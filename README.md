@@ -116,3 +116,6 @@ logo depois  do "createDB()".
       $sql->alterElement($table, ['coluna', 'ex: nome'], ['valor', ex:daniel], ['id', '1');
    ```
   <li>Essa função tem o intuito de Alterar um elemento especifico de uma tabela passando o nome da coluna que vai ser alterao com o novo valor da coluna e tambem a condiçao (ex:['id', '1'] == (id=1) em query) e irá retornar uma resposta Booleana(true/false).
+    
+# Como usar(PDO)
+    
