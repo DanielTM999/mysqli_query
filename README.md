@@ -133,3 +133,5 @@ logo depois  do "createDB()".
      $db = $sqlPdo->conexao();
  ```
 <li>Essa função tem o intuito de retornar a conexão para uso de querys personalizadas.
+
+# EM DESENVOLVIMENTO...
