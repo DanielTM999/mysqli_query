@@ -78,3 +78,16 @@ logo depois  do "createDB()".
       $sql->getCout($tabela, $colunas, $values); 
    ```
   Essa função tem o intuito de achar dados na tabela selecionada, informando parâmetros como nome da tabela, uma lista com os nomes das colunas e outra com os valores a serem pesquisados e achados na base de dados e retorna true se for == 0 e se não for == 0 retorna o numero de elementos encontrados.
+
+## pegar/mostrar todos os elementos de uma tabela
+    ```shell
+      $sql->useDB($database) // $database é o nome da base de dados criada
+      $tabela = "Table_name";
+      $lista = $sql->GetAllElements($tabela);
+      $lista = mysqli_fetch_assoc($lista);
+      foreach($lista as $key){
+        echo $key[//'nome da sua coluna'];
+      }
+    ```
+  Essa função tem o intuito de pegar e retornar um array associativo, podendo ser mostrado com um foreach ou qualqer
+
