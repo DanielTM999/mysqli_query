@@ -108,3 +108,5 @@ logo depois  do "createDB()".
      $sql->deleteUniqElement($tabela, ['coluna', 'ex: id'], ['valor', ex:1]);
   ```
   <li>Essa função tem o intuito de Deletar um elemento especifico de uma tabela passando o nome da coluna que vai ser usada como elemento de condição com o valor da coluna e irá retornar uma resposta Booleana(true/false)
+    
+## alterar elemento de uma tabela(row)(MYSQL)
