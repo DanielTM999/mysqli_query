@@ -134,7 +134,7 @@ logo depois  do "createDB()".
  ```
 <li>Essa função tem o intuito de retornar a conexão para uso de querys personalizadas.
 
-## Criar Banco de Dados
+## Criar Banco de Dados(PDO)
    ```shell
       $nome_tabela = "Table_name";
       $sqlPd->CreateDB($database); 
