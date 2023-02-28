@@ -1,5 +1,5 @@
 # mysql_query
-  **gerenciador de banco de dados e facilitador de gerenciador de banco de dados
+  *gerenciador de banco de dados e facilitador de gerenciador de banco de dados
   
 # instalação:
   ```shell
