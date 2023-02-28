@@ -134,4 +134,11 @@ logo depois  do "createDB()".
  ```
 <li>Essa função tem o intuito de retornar a conexão para uso de querys personalizadas.
 
+## Criar Banco de Dados
+   ```shell
+      $nome_tabela = "Table_name";
+      $sqlPd->CreateDB($database); 
+   ```
+  <li>Essa função tem o intuito de criar uma tabela, informando parâmetros como nome da tabela a ser criada,uma lista com os nomes das colunas e outra com os tipos de valores.
+
 # EM DESENVOLVIMENTO...
