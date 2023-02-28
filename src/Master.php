@@ -293,14 +293,15 @@
     class PdoMaster extends PdoMasterFi{
         private $host;
         private $pass;
-        private $pdodb;
+        private $user;
         private $typeDB;
 
-        function __construct($host, $pass, $typeDB){
+        function __construct($host, $pass, $typeDB, $user){
           $this->host = $host;
           $this->pass = $pass;
-          $this->typeDB = $typeDB;   
-          parent::__construct($this->host, $this->pass,$this->typeDB);
+          $this->typeDB = $typeDB;
+          $this->user = $user;   
+          parent::__construct($this->host, $this->pass,$this->typeDB, $this->user);
         }
 
         public function connection_statusPDO(){
@@ -312,5 +313,6 @@
                 echo 'fatal erro';
             }
         }
+
     }
 ?>
