@@ -6,6 +6,7 @@
       $ composer require danieltm/mysql_query
   ```
   <li>Executar o composer.
+    
   ## como Usar(MYSQLI)
    ```shell
      require __DIR__.'./vendor/autoload.php';
