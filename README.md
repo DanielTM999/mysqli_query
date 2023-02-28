@@ -45,7 +45,7 @@ logo depois  do "createDB()".
 
 ## Criar tabela(MYSQLI)
    ```shell
-      $sql->useDB($database)
+      $sql->useDB($database);
       $nome_tabela = "Table_name";
       $colunas = ['coluna1', 'coluna2'];
       $type = ['varchar', 'int'];
@@ -55,7 +55,7 @@ logo depois  do "createDB()".
   
 ## Deletar tabela(MYSQLI)
    ```shell
-      $sql->useDB($database)
+      $sql->useDB($database);
       $nome_tabela = "Table_name";
       $sql->DropTable($nome_tabela); 
    ```
@@ -63,7 +63,7 @@ logo depois  do "createDB()".
 
 ## Insenrindo dados nas tabelas(MYSQLI)
    ```shell
-      $sql->useDB($database) // $database é o nome da base de dados criada
+      $sql->useDB($database); // $database é o nome da base de dados criada
       $tabela = "Table_name";
       $colunas = ['coluna1', 'coluna2'];
       $values = ['valor1', 'valor2'];
@@ -73,7 +73,7 @@ logo depois  do "createDB()".
   
 ## quantidade de elementos de uma tabela(MYSQLI)
    ```shell
-      $sql->useDB($database) // $database é o nome da base de dados criada
+      $sql->useDB($database); // $database é o nome da base de dados criada
       $tabela = "Table_name";
       $colunas = ['coluna1', 'coluna2'];
       $values = ['achar1', 'achar2'];
@@ -83,7 +83,7 @@ logo depois  do "createDB()".
 
 ## pegar/mostrar todos os elementos de uma tabela(MYSQLI)
    ```shell
-      $sql->useDB($database) // $database é o nome da base de dados criada
+      $sql->useDB($database); // $database é o nome da base de dados criada
       $tabela = "Table_name";
       $lista = $sql->GetAllElements($tabela);
       foreach($lista as $key){
@@ -94,7 +94,7 @@ logo depois  do "createDB()".
 
 ## pegar/mostrar elementos especificos de uma tabela(MYSQLI)
   ```shell
-     $sql->useDB($database) // $database é o nome da base de dados criada
+     $sql->useDB($database); // $database é o nome da base de dados criada
      $tabela = "Table_name";
      $condição = ['ex: nome', 'senha']; // caso não informado na função ele fusba todos['*']
      $lista = $sql->GetUniqElements($tabela, ['colunas1', ''colunaN'], ['valorBuscado', 'valor2'], $condição);
@@ -103,10 +103,16 @@ logo depois  do "createDB()".
 
 ## Deletar elemento De uma Tabela(MYSQLI)
   ```shell
-     $sql->useDB($database) // $database é o nome da base de dados criada
+     $sql->useDB($database); // $database é o nome da base de dados criada
      $tabela = "Table_name";
      $sql->deleteUniqElement($tabela, ['coluna', 'ex: id'], ['valor', ex:1]);
   ```
   <li>Essa função tem o intuito de Deletar um elemento especifico de uma tabela passando o nome da coluna que vai ser usada como elemento de condição com o valor da coluna e irá retornar uma resposta Booleana(true/false)
     
 ## alterar elemento de uma tabela(row)(MYSQL)
+    ```shell
+      $sql->useDB($database); // $database é o nome da base de dados criada
+      $tabela = "Table_name";
+      $sql->alterElement($table, ['coluna', 'ex: nome'], ['valor', ex:daniel], ['id', '1');
+    ```
+  <li>Essa função tem o intuito de Alterar um elemento especifico de uma tabela passando o nome da coluna que vai ser alterao com o novo valor da coluna e tambem a condiçao (ex:['id', '1'] == (id=1) em query) e irá retornar uma resposta Booleana(true/false).
