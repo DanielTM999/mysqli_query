@@ -28,6 +28,7 @@
             try{
                 if($this->typeDB == "mysql"){
                     $conn = new PDO("mysql:dbname=$banco;host=$host", $user, $password);
+                    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                     return $conn;
                 }else{
                     return $conn = null;
@@ -41,6 +42,25 @@
 
         public function useDB($database){
             $this->pdodb = $database;
+        }
+
+        public function CreateDB($database){
+            $sql = "CREATE DATABASE IF NOT EXISTS $database";
+
+            try {
+                $pdo = $this->conexao();
+                $pste = $pdo->prepare($sql);
+                $auth = $pste->execute();
+
+                if($auth){
+                    $this->useDB($database);
+                    return true;
+                }else{
+                    return false;
+                }
+            } catch (PDOException $e) {
+                echo $e->getMessage();
+            }
         }
     }
 ?>
