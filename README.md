@@ -98,7 +98,7 @@ logo depois  do "createDB()".
      $sql->useDB($database); // $database é o nome da base de dados criada
      $tabela = "Table_name";
      $condição = ['ex: nome', 'senha']; // caso não informado na função ele fusba todos['*']
-     $lista = $sql->GetUniqElements($tabela, ['colunas1', ''colunaN'], ['valorBuscado', 'valor2'], $condição);
+     $lista = $sql->GetUniqElements($tabela, ['colunas1', 'colunaN'], ['valorBuscado', 'valor2'], $condição);
   ```
   <li>Essa função tem o intuito de pegar e retornar um array associativo com os elementos especificos selecionados da tabela, informando a tabela por quais        colunas ele vai usar como buscador e os elementos que vão ser buscados podendo deixar em branco(com isso ele irá retornar todos os elementos), podendo ser  mostrado com um foreach ou qualqer laço de repetição que o usuario desejar
 
@@ -114,7 +114,7 @@ logo depois  do "createDB()".
    ```shell
       $sql->useDB($database); // $database é o nome da base de dados criada
       $tabela = "Table_name";
-      $sql->alterElement($table, ['coluna', 'ex: nome'], ['valor', ex:daniel], ['id', '1');
+      $sql->alterElement($table, ['coluna', 'ex: nome'], ['valor', 'ex:daniel'], ['id', '1');
    ```
   <li>Essa função tem o intuito de Alterar um elemento especifico de uma tabela passando o nome da coluna que vai ser alterao com o novo valor da coluna e tambem a condiçao (ex:['id', '1'] == (id=1) em query) e irá retornar uma resposta Booleana(true/false).
     
