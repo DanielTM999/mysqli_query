@@ -62,5 +62,13 @@
                 echo $e->getMessage();
             }
         }
+        
+        public function dropDB($database){
+            $sql = "DROP  $database";
+            
+            try{
+                $pdo = $this->conexao();
+            }
+                
     }
 ?>
