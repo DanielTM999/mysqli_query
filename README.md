@@ -1,5 +1,5 @@
 # mysql_query
-#gerenciador de banco de dados e facilitador de gerenciador de banco de dados
+  **gerenciador de banco de dados e facilitador de gerenciador de banco de dados
   
 # instalação:
   ```shell
@@ -99,7 +99,7 @@ logo depois  do "createDB()".
   ```
   Essa função tem o intuito de pegar e retornar um array associativo com os elementos especificos selecionados da tabela, informando a tabela por quais        colunas ele vai usar como buscador e os elementos que vão ser buscados podendo deixar em branco(com isso ele irá retornar todos os elementos), podendo ser  mostrado com um foreach ou qualqer laço de repetição que o usuario desejaa
 
-## Deletar elemento De uma Tabela
+## Deletar elemento De uma Tabela(MYSQLI)
   ```shell
      $sql->useDB($database) // $database é o nome da base de dados criada
      $tabela = "Table_name";
