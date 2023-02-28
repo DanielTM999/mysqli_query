@@ -11,8 +11,9 @@
      require __DIR__.'./vendor/autoload.php';
      use MysqlQuery\Master;
      $sql = new Master("host", "user", "senha");
-  ```
-   <li>importe o autoload do composer, logo apois isso use o classe de mysqlquery e instancie uma classe passando seus dados de mysql
+  ``` 
+  <li>importe o autoload do composer, logo apois isso use o classe de mysqlquery e instancie uma classe passando seus dados de mysql
+     
   ## como criar banco de dados(MYSQLI)
    ```shell
      $database = "nome do banco de dados";
