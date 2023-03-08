@@ -4,8 +4,8 @@
     use mysqli;
     use PdoMasterFi;
 
-    require "./abstracao/abs.php";
-    require "./PdoMasterFi";
+    require __DIR__."./abstracao/abs.php";
+    require __DIR__."./PdoMasterFi";
 
     //main CLass
     class Master extends abs{
