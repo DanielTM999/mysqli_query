@@ -4,6 +4,8 @@
     use mysqli;
     use PdoMasterFi;
 
+    include "./abstracao/abs.php";
+
     //main CLass
     class Master extends abs{
 
